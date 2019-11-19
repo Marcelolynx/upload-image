@@ -6,8 +6,8 @@ const multerConfig = require('./config/multer');
 const Post = require('./models/Post');
 
 
-routes.get("/",  (req, res) => {
-
+routes.get("/",  async (req, res) => {
+    const posts = await Post.find();
 
     return res.json({
 
